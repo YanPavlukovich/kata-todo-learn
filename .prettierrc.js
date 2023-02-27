@@ -1,0 +1,9 @@
+export const singleQuote = true;
+export const printWidth = 120;
+export const tabWidth = 2;
+export const trailingComma = 'none';
+export const bracketSpacing = true;
+export const semi = false;
+export const useTabs = false;
+export const jsxBracketSameLine = false;
+export const arrowParens = 'avoid';
