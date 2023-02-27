@@ -20,8 +20,8 @@
   },
   "plugins": ["react", "prettier", "import"],
   "rules": {
-    "indent": ["error", 2],
-    "prettier/prettier": ["error", { "endOfLine": "auto" }], // изменненное правило ссылка в папке React
+    "indent": [0, 2],
+    "prettier/prettier": "error", // изменненное правило ссылка в папке React
     "linebreak-style": [0, "unix"],
     "quotes": ["error", "single"],
     //    "semi": ["error", "never"],
