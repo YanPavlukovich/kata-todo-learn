@@ -1,9 +1,9 @@
 import React from 'react';
 
-import TodoListItem from '../todo-list-item/todo-list-item';
+import TodoListItem from '../todo-list-item/todo-list-item.js';
 import './todo-list.css';
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, onDeleted }) => {
   const elements = todos.map((item) => {
     const { id, ...itemProps } = item;
     /* Когда в jsx имена свойств компонента совпадают с именами свойств объекта
@@ -12,7 +12,7 @@ const TodoList = ({ todos }) => {
     return (
       // eslint-disable-next-line react/jsx-key
       <li key={id} className="list-group-item">
-        <TodoListItem {...itemProps} />
+        <TodoListItem {...itemProps} onDeleted={() => onDeleted(id)} />
       </li>
     );
   });
