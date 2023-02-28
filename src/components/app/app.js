@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import AppHeader from '../app-header/app-header.js';
 import SearchPanel from '../search-panel/search-panel.js';
 import TodoList from '../todo-list/todo-list.js';
 import ItemStatusFilter from '../item-status-filter/item-status-filter.js';
+import ItemAddForm from '../item-add-form/item-add-form.js';
 
 import './app.css';
+
+const TODO_ID = uuidv4();
 
 export default class App extends Component {
   state = {
@@ -28,6 +32,22 @@ export default class App extends Component {
     });
   };
 
+  addItem = (text) => {
+    const newItem = {
+      label: text,
+      important: false,
+      id: TODO_ID,
+    };
+
+    this.setState(({ todoData }) => {
+      const newTodoData = [...todoData, newItem];
+
+      return {
+        todoData: newTodoData,
+      };
+    });
+  };
+
   render() {
     return (
       <div className="todo-app">
@@ -38,6 +58,7 @@ export default class App extends Component {
         </div>
 
         <TodoList todos={this.state.todoData} onDeleted={this.deleteItem} />
+        <ItemAddForm onItemAdded={this.addItem} />
       </div>
     );
   }
