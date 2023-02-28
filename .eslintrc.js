@@ -4,6 +4,7 @@ export const plugins = ['@typescript-eslint', 'react-native', 'jsx-a11y', 'impor
 export const overrides = [
 	{
 		files: ['*.ts', '*.tsx'],
+		"no-restricted-imports": ["error", "import1", "import2"],
 		'no-param-reassign': 0,
 		'react-hooks/rules-of-hooks': 'error',
 		'react-hooks/exhaustive-deps': 'warn',
@@ -52,8 +53,12 @@ export const overrides = [
 				js: 'never',
 				jsx: 'never',
 				ts: 'never',
-				tsx: 'never'
+				tsx: 'never',
 			}
 		]
 	}
 ];
+
+module.exports = {
+  parser: "@babel/eslint-parser",
+};
