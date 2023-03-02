@@ -1,3 +1,9 @@
 .item-add-form {
 	margin-top: 10px;
 }
+
+.item-add-form input {
+	margin-right: auto;
+	height: fit-content;
+	width: 75%;
+}
